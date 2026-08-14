@@ -26,5 +26,10 @@ jobs:
       run: make
     - name: make check
       run: make check
+    - name: generate jconfig
+      run: |
+        cd src/jpeg-6b-steg
+        cp jconfig.cfg jconfig.h || cp jconfig.doc jconfig.h
+        cd ../../      
     - name: make distcheck
       run: make distcheck
